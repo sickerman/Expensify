@@ -6,9 +6,6 @@ import { db } from "@/lib/db";
 export default async function exchangePublicToken(req, res) {
   //Get User from header.cookie
   const user = await getUserFromCookieServer(req, res);
-  const exchangeResponse = await plaidClient.itemPublicTokenExchange({
-    public_token: req.body.public_token,
-  });
 
   try {
     const exchangeResponse = await plaidClient.itemPublicTokenExchange({
